@@ -16,7 +16,7 @@ The style file `www/scrabble.css` uses the font `Futura Book` (OTF), which I fou
 
 The game was initially made in Dutch. I translated the game to English before publishing it here. Changing the language is an easy task. It suffices to:
 
-* Translate the various sentences in `www/scrabble.js` and `files/joingame.php`
+* Translate the various sentences in `www/scrabble.js` and `files/joingame.php` that appear throughout the code. (Sorry for this.)
 * Change the variable `letterValues` in `www/scrabble.js`.
 * Change the variables `$letterValues` and `$letterQuantities` in `files/game_functions.php`.
 
