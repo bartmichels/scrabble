@@ -28,7 +28,7 @@ This was made for an Apache server that runs PHP 8.1 and MySQL (MariaDB). The on
 
 * Create a database named `scrabble`.
 * Initialize the database using `files/scrabble.sql`
-* Complete `files/db_config.php` with your server name (most likely `localhost`, database username and database password.
+* Complete `files/db_config.php` with your server name (most likely `localhost`), database username and database password.
 * Choose a directory on your server (which I'll call the web root). Place all the files in `www/` into that directory (but not the folder itself), together with `Futura Book.otf` or whichever font you replace it with.
 * Change the Rewrite Base in `.htaccess` to your web root.
 * In `index.php`, change `WEB_ROOT` to your web root.
