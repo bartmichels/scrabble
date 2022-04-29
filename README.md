@@ -45,7 +45,7 @@ This is made to play on desktop browsers. The design is responsive to screen siz
 
 ### Gameplay
 
-Creating a game will produce a unique game id, which you can share. In the lobby you can then add and delete players. As soon as all players (and at least 2) are ready, the game starts. This game supports up to 7 players (that's how many "players" I could realistically fit around the board), though playing with more than 4 is not a good idea regardless.
+Creating a game will produce a unique game id, which you can share. In the lobby you can then add and delete players. As soon as all players (and at least 2) are ready, the game starts. This game supports up to 7 players (that's how many "players" I could realistically fit around the board, design-wise), though playing with more than 4 is not a good idea regardless.
 
 Player profiles are not protected using passwords. This was made so that you can remove or replace players during the game if their internet connection is down. You should just trust each other not to peek at each other's letters.
 
