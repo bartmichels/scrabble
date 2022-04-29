@@ -1,0 +1,713 @@
+@font-face {
+    font-family: "Futura Book";
+    src: url("./Futura Book.otf") format("opentype");
+}
+
+body {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/************************************************
+ * Size of sections
+/************************************************/
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.flex-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#header {
+    flex: 0 0 auto;
+    width: 100%;
+}
+
+#content {
+    flex: 1 1 auto;
+    width: 100%;
+}
+
+/************************************************
+ * Header
+/************************************************/
+.header-content-wrapper {
+    padding: 10px;
+}
+
+#header-content {
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+#header input {
+    margin-right: 10px;
+}
+
+#header-lobby, #header-game, #skip-player, #unskip-player {
+    display: none;
+}
+
+/************************************************
+ * Content
+/************************************************/
+.content-wrapper {
+    padding: 10px;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+}
+
+.content-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -4;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+}
+
+/************************************************
+ * Join content
+/************************************************/
+.select-player {
+    cursor: pointer;
+}
+
+/************************************************
+  * Lobby content
+/************************************************/
+.select-player, .new-player, .player-card {
+    height: 50px;
+    width: 180px;
+    font-size: 16px;
+    display: inline-block;
+    vertical-align: top;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    margin: 10px 20px 10px 0px;
+    padding: 5px;
+    background-color: #dbdbdb;
+}
+
+.player-card-content-wrapper {
+    height: 50px;
+    width: 180px;
+    display: table;
+    table-layout: fixed;
+}
+
+.player-card-content {
+    display: table-cell;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    overflow: hidden;
+}
+
+.lobby-button {
+    margin-right: 10px;
+}
+
+#content-lobby {
+    display: none;
+}
+
+/************************************************
+ * Game content
+/************************************************/
+#content-game {
+    display: none;
+}
+
+.content-game-wrapper {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+.game-pane1 {
+    flex: 0 0 auto;
+}
+
+.game-pane2 {
+    flex: 1 1 0;
+    max-width: 20%;
+}
+
+.game-pane3 {
+    flex: 1 1 0;
+}
+
+/************************************************
+ * Board
+/************************************************/
+#game-board {
+    box-sizing: border-box;
+}
+
+.game-board-content {
+    position: relative;
+}
+
+.board-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 2%;
+    box-sizing: border-box;
+}
+
+.board-background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -3;
+    border: 3px solid;
+    box-sizing: border-box;
+}
+
+.board-grid {
+    width: 100%;
+    height: 100%;
+    border-spacing: 0px;
+    border: none;
+    border-collapse: collapse;
+    box-sizing: border-box;
+    table-layout: fixed;
+}
+
+.board-grid td {
+    border: 3px solid;
+    position: relative;
+    font-family: "Futura Book";
+    font-size: 6px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.board-grid svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.square-empty {
+    z-index: -2;
+}
+
+.letter2x, .letter3x, .word2x, .word3x {
+    z-index: -1;
+}
+
+/************************************************
+ * Players around board
+ ************************************************/
+.players {
+    position: absolute;
+    width: 100%;
+}
+
+#players-top {
+    left: 0;
+}
+
+#players-left {
+    transform-origin: left top;
+    transform: rotate(90deg);
+    left: 0;
+    top: 0;
+}
+
+#players-right {
+    transform-origin: right top;
+    transform: rotate(270deg);
+    left: 0;
+    top: 0;
+}
+
+#current-player-name-wrapper {
+    text-align: center;
+    font-weight: bold;
+    font-size: 22px;
+    display: table;
+    margin: auto;
+}
+
+.other-player-name {
+    text-align: center;
+}
+
+.other-player-tilearea {
+    margin: auto;
+    border: none;
+    border-radius: 3px;
+}
+
+#current-player-name {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.player {
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: inline-block;
+}
+
+/************************************************
+ * Current player tiles
+/************************************************/
+#current-player-tile-area {
+    width: 100%;
+    height: 100%;
+}
+
+/************************************************
+ * Scrabble tile
+/************************************************/
+.scrabble-tile, .tile-phantom {
+    border-radius: 8%;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.scrabble-tile {
+    border: 1px solid black;
+    background-color: #ffdfac;
+}
+
+.scrabble-tile-text, .scrabble-tile-number {
+    font-family: "Futura Book";
+    dominant-baseline: central;
+    text-anchor: middle;
+    font-weight: bold;
+}
+
+#current-player-tile-area {
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.other-player-tilearea {
+    position: relative;
+}
+
+.other-player-tilearea, #current-player-tile-area {
+    background-color: #034a1e;
+}
+
+.current-player-tile, .old-tile {
+    position: absolute;
+    cursor: grab;
+}
+
+.other-player-tile, .other-player-tile-visible {
+    top: 50%;
+    position: absolute;
+    transform: translateY(-50%);
+}
+
+.tile-selected {
+    box-shadow: 0px 0px 10px 2px white;
+}
+
+.tile-moving, .tile-selected, .tile-phantom {
+    z-index: 2;
+}
+
+.tile-used, .tile-winner {
+    background: radial-gradient(#ffdfac 0%, #ff0000 200%);
+}
+
+.tile-phantom {
+    position: absolute;
+    box-shadow: inset 0px 0px 1px 1px rgb(255, 255, 255, 0.7), 0px 0px 1px 1px rgb(255, 255, 255, 0.7)
+}
+
+/************************************************
+ * Button color scheme
+/************************************************/
+#header {
+    background-color: #dbdbdb;
+}
+
+.select-player, .new-player, .player-card {
+    background-color: #dbdbdb;
+}
+
+.player-selected {
+    background-color: #b3b3b3;
+}
+
+.player-ready, #button-ready, #unskip-player, #unskip-player:active, #button-ready:active {
+    background-color: #d2ffb3;
+}
+
+.player-wait, #button-wait, #button-wait:active {
+    background-color: #c9dcff;
+}
+
+.player-ready.current-player, #button-ready:hover, #unskip-player:hover {
+    background-color: #aded80;
+}
+
+.player-wait.current-player, #button-wait:hover {
+    background-color: #a8c6ff;
+}
+
+.delete-player:hover, #skip-player:hover {
+    background-color: #ff8a63;
+}
+
+.delete-player, #skip-player, .delete-player:active, #skip-player:active {
+    background-color: #ffbaa3;
+}
+
+#reject {
+    color: red;
+}
+
+#approve {
+    color: green;
+}
+
+#change-tiles {
+    color: blue;
+}
+
+#reject:disabled, #approve:disabled, #change-tiles:disabled {
+    color: #9b9b9b;
+}
+
+/************************************************
+* Board color scheme
+/************************************************/
+.square-empty {
+    background-color: #0dba5b;
+}
+
+.board-background {
+    background-color: #d8d6ca
+}
+
+.letter2x {
+    background-color: #80d0f2;
+}
+
+.letter3x {
+    background-color: #009ee7;
+}
+
+.word2x {
+    background-color: #fabdc0;
+}
+
+.word3x {
+    background-color: #f51318;
+}
+
+.board-background, .board-grid td {
+    border-color: #052003;
+}
+
+/************************************************
+ * Rank letters and calculations
+/************************************************/
+.player-rank-div, .calculation-item {
+    display: flex;
+}
+
+.player-rank-name-wrapper, .calculation-item-text-wrapper {
+    display: table;
+    height: 100%;
+    table-layout: fixed;
+}
+
+.word-total-text-wrapper {
+    padding-left: 5px;
+}
+
+.player-rank-name, .calculation-item-text {
+    display: table-cell;
+    vertical-align: middle;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.player-rank-name {
+    padding-right: 5px;
+}
+
+.player-rank-letters {
+    flex: 1;
+}
+
+.player-rank-letters, .result-letters {
+    position: relative;
+    height: 100%;
+}
+
+.rank-tile, .result-tile {
+    position: absolute;
+    top: 50%;
+    left: auto;
+    transform: translateY(-50%);
+}
+
+#calculations {
+    box-sizing: border-box;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.calculation-head, .scoreboard-head {
+    font-weight: bold;
+    font-size: 120%;
+    margin-bottom: 10px;
+}
+
+.calculation-total {
+    font-weight: bold;
+}
+
+#scoreboard {
+    box-sizing: border-box;
+    text-align: center;
+    height: 70%;
+}
+
+#scoreboard table {
+    margin-left: auto;
+    margin-right: auto;
+    table-layout: fixed;
+    display: inline-table;
+    padding: 0px 5px;
+    box-sizing: border-box;
+    min-width: 170px;
+}
+
+#scoreboard td {
+    border: 1px solid #a2a2a2;
+    border-collapse: collapse;
+}
+
+.scoreboard-score, .scoreboard-name {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.scoreboard-score {
+    background-color: #f7f7f7;
+}
+
+.scoreboard-name {
+    font-weight: bold;
+    padding: 5px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: #efefef;
+}
+
+.scoreboard-minus {
+    font-style: italic;
+}
+
+.scoreboard-total {
+    font-weight: bold;
+    background-color: #d4d4d4;
+}
+
+.score-winner {
+    background-color: #ffe52f;
+}
+
+/************************************************
+ * Chat
+/************************************************/
+#chat {
+    height: 30%;
+    width: 100%;
+}
+
+#chat-wrapper {
+    height: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    padding-left: 10px;
+}
+
+#chat-messages {
+    height: calc(100% - 30px);
+    box-sizing: border-box;
+    border: 1px solid #a2a2a2;
+    overflow: hidden;
+    padding: 5px;
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
+}
+
+#chat-input-wrapper {
+    height: 30px;
+    box-sizing: border-box;
+    border: 1px solid #a2a2a2;
+    border-top: none;
+    padding-left: 5px;
+}
+
+#chat-input {
+    width: 100%;
+    height: 100%;
+}
+
+#chat-input, #chat-input:focus {
+    border: none;
+    outline: none;
+}
+
+.chat-player-name {
+    font-weight: bold;
+    padding-right: 5px;
+}
+
+.game-chat-message {
+    font-weight: bold;
+}
+
+/************************************************
+ * Bag
+/************************************************/
+#bag {
+    box-sizing: border-box;
+}
+
+#bag-wrapper {
+    height: 100%;
+    position: relative;
+    margin: auto;
+}
+
+#bag img {
+    height: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+}
+
+#bag img.cover {
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.bag-tile {
+    position: absolute;
+    border-color: grey;
+}
+
+.click-allowed {
+    cursor: pointer;
+}
+
+/************************************************
+ * Move buttons
+/************************************************/
+#approve {
+    font-weight: bold;
+}
+
+#change-tiles {
+    font-weight: bold;
+}
+
+.move-button {
+    padding: 0px;
+    vertical-align: top;
+    margin: 0 0 0 5%;
+}
+
+#move-button-container {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    white-space: nowrap;
+}
+
+#move-buttons {
+    position: relative;
+    box-sizing: border-box;
+}
+
+/************************************************
+ * Messages
+/************************************************/
+#message-overlay {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    background-color: grey;
+    z-index: 3;
+}
+
+#message {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    width: 300px;
+    background-color: white;
+    z-index: 4;
+    text-align: center;
+    border-radius: 10px;
+}
+
+/************************************************
+ * Stuff
+/************************************************/
+.lobby-buttons, #lobby-content, .join-player-cards {
+    margin: 25px 0px;
+}
+
+.player-selected, .player-ready.current-player, .player-wait.current-player {
+    font-weight: bold;
+    padding: 4px;
+    border-width: 2px;
+}
+
+.join-player-cards {
+    font-size: 0;
+}
+
+.not-free {
+    /*background-color: white;*/
+}
