@@ -1,5 +1,3 @@
-/* global $, game */
-/* eslint-disable no-unused-vars */
 var FPS = 20;
 var my_player_id;
 var is_active_player = false;
