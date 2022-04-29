@@ -41,7 +41,7 @@ $players = getPlayers($game);
             </div>
             <div id="content">
                 <div id="message-overlay"></div>
-                <div id="message">Letters omwisselen? Typ "scrabble" + Enter om te bevestigen, Enter om te annuleren:<br><input type="text" maxlength="8" id="confirm-change-tiles">
+                <div id="message">Change tiles? Type "scrabble" + Return to confirm, or hit Return to cancel:<br><input type="text" maxlength="8" id="confirm-change-tiles">
                 </div>
                 <div class="content-wrapper">
                     <div class="content-background">
