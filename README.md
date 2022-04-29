@@ -45,7 +45,7 @@ This is made to play on desktop browsers. The design is responsive to screen siz
 
 ### Gameplay
 
-Creating a game will product a unique game id, which you can share. In the lobby you can then add and delete players. As soon as all players (and at least 2) are ready, the game starts.
+Creating a game will produce a unique game id, which you can share. In the lobby you can then add and delete players. As soon as all players (and at least 2) are ready, the game starts.
 
 Player profiles are not protected using passwords. This was made so that you can remove or replace players during the game if their internet connection is down. You should just trust each other not to peek at each other's letters.
 
