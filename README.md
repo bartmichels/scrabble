@@ -24,7 +24,7 @@ Ideally I should separate the language aspect from the code, to make this proces
 
 ## Installation
 
-This was made for an Apache server that runs PHP 8.1 and MySQL (MariaDB). Installation is relatively easy:
+This was made for an Apache server that runs PHP 8.1 and MySQL (MariaDB). The only real reliance on Apache is in the URL rewriting in `www/.htaccess`. Installation is relatively easy:
 
 * Create a database named `scrabble`.
 * Initialize the database using `files/scrabble.sql`
@@ -35,4 +35,31 @@ This was made for an Apache server that runs PHP 8.1 and MySQL (MariaDB). Instal
 * Choose another directory on your server, for the rest of the files. (This should not be public because it will contain the password to your database and you don't want to risk Apache leaking that.) Places all the files in `/files` (but not `scrabble.sql`, or at least you don't need that) in that folder.
 * Make sure that you `set_include_path` to your chosen path, in the beginning of `index.php`.
 
-That's it! I used a password in order to control who can access the game. Check out `files/passvalidation.php` if you want to change the password. If you don't want that, then... Well, as a dirty solution that doesn't require changing the code too much, you can just delete the first three `if` statements in `index.php` (which use the variable `$_SESSION['ok']`).
+That's it! I used a password in order to control who can access the game. Check out `files/passvalidation.php` if you want to change the password. If you don't want a password, then... Well, as a dirty solution that doesn't require changing the code too much, you can just delete the first three `if` statements in `index.php` (which use the variable `$_SESSION['ok']`).
+
+## Usage
+
+### Browser support
+
+This is made to play on desktop browsers. The design is responsive to screen size, but a too small screen will mess things up. Tablets might work, but I haven't tested them. It should work fine with Chrome, Edge, Firefox and Opera.
+
+### Gameplay
+
+Creating a game will product a unique game id, which you can share. In the lobby you can then add and delete players. As soon as all players (and at least 2) are ready, the game starts.
+
+Player profiles are not protected using passwords. This was made so that you can remove or replace players during the game if their internet connection is down. You should just trust each other not to peek at each other's letters.
+
+To decide who begins, draw letters from the green bag until a winner is decided.
+
+You can place tiles by dragging them, or by clicking them and then clicking again where you want them to be.
+
+Verifying words is not done using a dictionary, but is meant to be done using mutual agreement. The player following you decides whether to approve or reject your move. Moves cannot be undone once approved.
+
+All the rest should speak for itself.
+
+Have fun!
+
+## Known issues
+
+* Data corruption is possible because Apache will allow multiple simultaneous connections. If you spam-place and spam-remove tiles, multiple database updates can be intertwined. I have somewhat limited this by placing read and write operations as close together as possible, but this is not a robust solution. But as long as you play the game normally, even if you click fast, nothing should go wrong.
+* The game interface and therefore the tile placement gets messed up on small screen sizes. If you use the entire width of your desktop screen, you should be good.
