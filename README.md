@@ -2,7 +2,7 @@
 
 ## History and purpose
 
-There are plenty of online Scrabble-based mobile apps and browser games, such as the [Internet Scrabble Club](https://isc.ro/), with its very active and passionate community that includes some of the world's top players. As far as I have found, no existing application supports games with 3 or more players. This makes sense, because nobody would play a 3-player scrabble game competitively, but it also means that the warmth of a family gathering around a Scrabble board is doomed during periods of quarantine. So I made my own. 
+There are plenty of online Scrabble-based mobile apps and browser games, such as the [Internet Scrabble Club](https://isc.ro/), with its very active and passionate community that includes some of the world's top players. As far as I have found, no existing application supports games with 3 or more players. This makes sense, because nobody would play a 3-player scrabble game competitively, but it also means that the warmth of a family gathering around a Scrabble board is doomed during periods of quarantine. So I made my own.
 
 This Scrabble-based game is not a commercial product. It was created to play with family and friends. While I initially hesited to, I am publishing the source code now to relieve the people who are looking for the same thing as I.
 
@@ -45,7 +45,7 @@ This is made to play on desktop browsers. The design is responsive to screen siz
 
 ### Gameplay
 
-Creating a game will produce a unique game id, which you can share. In the lobby you can then add and delete players. As soon as all players (and at least 2) are ready, the game starts.
+Creating a game will produce a unique game id, which you can share. In the lobby you can then add and delete players. As soon as all players (and at least 2) are ready, the game starts. This game supports up to 7 players (that's how many "players" I could realistically fit around the board), though playing with more than 4 is not a good idea regardless.
 
 Player profiles are not protected using passwords. This was made so that you can remove or replace players during the game if their internet connection is down. You should just trust each other not to peek at each other's letters.
 
