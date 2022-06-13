@@ -199,7 +199,7 @@ function handleGameMessage(message) {
             if (message.activePlayer == my_player_id) {
                 positionCurrentPlayerTiles(message.idleTiles, message.usedTiles);
                 setSquareVacancies(message.squaresFree);
-                addGameChatMessage("Ongeldige zet.");
+                addGameChatMessage("Invalid move.");
             }
             break;
         case "cancel move":
@@ -2270,7 +2270,7 @@ function setScoreBoard(startingPlayer, players, scoreboard, minusPoints, totals,
     scoreboardDiv.innerHTML = "";
     var scoreHead = document.createElement("div");
     scoreHead.classList.add("scoreboard-head");
-    scoreHead.innerHTML = "Scores";
+    scoreHead.innerHTML = "Scoreboard";
     scoreboardDiv.append(scoreHead);
 
     var table = document.createElement("table");
