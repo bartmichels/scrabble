@@ -43,7 +43,7 @@ That's it! I used a password in order to control who can access the game. Check 
 
 ### Browser support
 
-This is made to play on desktop browsers. The design is responsive to screen size, but a too small screen will mess things up. Tablets might work, but I haven't tested them. It should work fine with Chrome, Edge, Firefox and Opera. Chrome works best because its top-bar is much slimmer by default, but any browser should give the same result in full-screen mode.
+This is made to play on desktop browsers. The design is responsive to screen size, but a too small screen will mess things up. Tablets might work, but I haven't tested them. It should work fine with Chrome, Edge, Firefox and Opera. Chrome works best because its UI takes up less space by default, but any browser should give the same result in full-screen mode. Ideally I should use canvas elements so that everything scales nicely, but I stopped working on this as soon as it worked reasonably well.
 
 ### Gameplay
 
@@ -53,7 +53,7 @@ Player profiles are not protected using passwords. This was made so that you can
 
 To decide who begins, draw letters from the green bag until a winner is decided.
 
-You can place tiles by dragging them, or by clicking them and then clicking again where you want them to be.
+You can place tiles in two ways: using drag and drop, or by clicking them and then clicking again where you want them to be.
 
 Verifying words is not done using a dictionary, but is meant to be done using mutual agreement. The player following you decides whether to approve or reject your move. Moves cannot be undone once approved.
 
@@ -64,4 +64,4 @@ Have fun!
 ## Known issues
 
 * Data corruption is possible because Apache will allow multiple simultaneous connections. If you spam-place and spam-remove tiles, multiple database updates can be intertwined. I have somewhat limited this by placing read and write operations as close together as possible, but this is not a robust solution. But as long as you play the game normally, even if you click fast, nothing should go wrong.
-* The game interface and therefore the tile placement gets messed up on small screen sizes. If you use the entire width of your desktop screen, you should be good.
+* The game interface and therefore the tile placement gets messed up on small screen sizes. If you use the entire height of your desktop screen, you should be good.
