@@ -6,6 +6,8 @@ There are plenty of online Scrabble-based mobile apps and browser games, such as
 
 This Scrabble-based game is not a commercial product. It was created to play with family and friends. While I initially hesited to, I am publishing the source code now to relieve the people who are looking for the same thing as I.
 
+**→ [Live demo](https://pommetatin.be/scrabble_demo/) ←**
+
 ## Sources
 
 The code is entirely mine. The image `www/bag-green.png` is made by me from the following public domain image: https://publicdomainvectors.org/en/free-clipart/Pile-of-money/46821.html
@@ -41,7 +43,7 @@ That's it! I used a password in order to control who can access the game. Check 
 
 ### Browser support
 
-This is made to play on desktop browsers. The design is responsive to screen size, but a too small screen will mess things up. Tablets might work, but I haven't tested them. It should work fine with Chrome, Edge, Firefox and Opera.
+This is made to play on desktop browsers. The design is responsive to screen size, but a too small screen will mess things up. Tablets might work, but I haven't tested them. It should work fine with Chrome, Edge, Firefox and Opera. Chrome works best because its top-bar is much slimmer by default, but any browser should give the same result in full-screen mode.
 
 ### Gameplay
 
