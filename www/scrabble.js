@@ -2239,7 +2239,7 @@ function showMoveResult(name, result) {
         var totalDivText = document.createElement("div");
         totalDivTextWrapper.appendChild(totalDivText);
         totalDivText.classList.add("calculation-item-text");
-        totalDivText.innerHTML = "Totaal: " + result.total;
+        totalDivText.innerHTML = "Total: " + result.total;
         calculations.append(totalDiv);
     }
     document.querySelectorAll(".calculation-item").forEach(element => {
