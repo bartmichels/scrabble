@@ -61,7 +61,7 @@ $players = getPlayers($game);
             
                             </b>
                         </p>
-                        <p>Speel als:</p>
+                        <p>Play as:</p>
                         <div class="join-player-cards"><?php
                             foreach ($players as $player):
                             ?>
