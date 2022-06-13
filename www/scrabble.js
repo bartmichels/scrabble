@@ -2186,7 +2186,7 @@ function showMoveResult(name, result) {
     calculations.innerHTML = "";
     var head = document.createElement("div");
     head.classList.add("calculation-head");
-    head.innerHTML = "Zet van " + name + ":";
+    head.innerHTML = name + "'s move:";
     calculations.append(head);
     result.words.forEach(word => {
         var wordDiv = document.createElement("div");
