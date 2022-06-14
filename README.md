@@ -63,5 +63,5 @@ Have fun!
 
 ## Known issues
 
-* Data corruption is possible because Apache will allow multiple simultaneous connections. If you spam-place and spam-remove tiles, multiple database updates can be intertwined. I have somewhat limited this by placing read and write operations as close together as possible, but this is not a robust solution. But as long as you play the game normally, even if you click fast, nothing should go wrong.
+* Data corruption is possible because Apache will allow multiple simultaneous connections. If you spam-place and spam-remove tiles, multiple database updates can be intertwined. I have somewhat limited this by placing read and write operations as close together as possible, but this is not a robust solution. But as long as you play the game normally, even if you click fast, nothing should go wrong. The correct way around this is of course using sockets, but I don't have access to that with my cheap hosting provider and so I worked with what I can get.
 * The game interface and therefore the tile placement gets messed up on small screen sizes. If you use the entire height of your desktop screen, you should be good.
