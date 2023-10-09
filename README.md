@@ -31,8 +31,8 @@ This was made for an Apache server that runs PHP 8.1 and MySQL (MariaDB). The on
 * Create a database named `scrabble`.
 * Initialize the database using `files/scrabble.sql`
 * Complete `files/db_config.php` with your server name (most likely `localhost`), database username and database password.
-* Choose a directory on your server (which I'll call the web root). Place all the files in `www/` into that directory (but not the folder itself), together with `Futura Book.otf` or whichever font you replace it with.
-* Change the Rewrite Base in `.htaccess` to your web root.
+* Choose a directory on the public part of your server (which I'll call the web root). Place all the files in `www/` into that directory (but not the folder itself), together with `Futura Book.otf` or whichever font you replace it with.
+* Change the Rewrite Base in `.htaccess` to your web root. This should be the client-side URI relative to your website's HTTP host. Ex: `mywebsite.org` → `/`, `scrabble.mywebsite.org/games/scrabble_game/` → `/games/scrabble_game/`
 * In `index.php`, change `WEB_ROOT` to your web root.
 * Choose another directory on your server, for the rest of the files. (This should not be public because it will contain the password to your database and you don't want to risk Apache leaking that.) Places all the files in `/files` (but not `scrabble.sql`, or at least you don't need that) in that folder.
 * Make sure that you `set_include_path` to your chosen path, in the beginning of `index.php`.
